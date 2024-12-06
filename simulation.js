@@ -32,10 +32,10 @@ fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.
 
     // Position the text meshes on the surface of the electrons, ensuring they are centered
     // Electron 1 (A): Position on the surface of the left electron
-    textMeshA.position.set(-2.8, 0.1, 0.3);  // Position slightly on the surface of electron1
+    textMeshA.position.set(-2.85, 0.1, 0.3);  // Position slightly on the surface of electron1
 
     // Electron 2 (B): Position on the surface of the right electron
-    textMeshB.position.set(2.8, 0.1, 0.3);   // Position slightly on the surface of electron2
+    textMeshB.position.set(2.85, 0.1, 0.3);   // Position slightly on the surface of electron2
 
     // Add text meshes to the scene
     scene.add(textMeshA);

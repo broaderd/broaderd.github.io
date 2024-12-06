@@ -1,4 +1,48 @@
-// Basic scene setup
+// Make sure you have a font loader
+const fontLoader = new THREE.FontLoader();
+
+// Load a font (you can use a URL for a font file)
+fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
+
+    // Create 3D Text for "A" and "B"
+    const textGeometryA = new THREE.TextGeometry('A', {
+        font: font,
+        size: 0.3,  // Adjust the size of the text to fit well on the electron surface
+        height: 0.05,  // Thinner letters by reducing the height
+        curveSegments: 4  // Fewer curve segments to make it look thinner
+    });
+
+    const textGeometryB = new THREE.TextGeometry('B', {
+        font: font,
+        size: 0.3,
+        height: 0.05,  // Thinner letters by reducing the height
+        curveSegments: 4  // Fewer curve segments to make it look thinner
+    });
+
+    // Create materials for the text (Black color)
+    const textMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+
+    // Create Meshes for the text
+    const textMeshA = new THREE.Mesh(textGeometryA, textMaterial);
+    const textMeshB = new THREE.Mesh(textGeometryB, textMaterial);
+
+    // Center the text geometries
+    textGeometryA.center();
+    textGeometryB.center();
+
+    // Position the text meshes on the surface of the electrons, ensuring they are centered
+    // Electron 1 (A): Position on the surface of the left electron
+    textMeshA.position.set(-2.8, 0.1, 0.3);  // Position slightly on the surface of electron1
+
+    // Electron 2 (B): Position on the surface of the right electron
+    textMeshB.position.set(2.8, 0.1, 0.3);   // Position slightly on the surface of electron2
+
+    // Add text meshes to the scene
+    scene.add(textMeshA);
+    scene.add(textMeshB);
+});
+
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000); // Reduced FOV to 30 for a tighter view
 const renderer = new THREE.WebGLRenderer();
@@ -117,3 +161,4 @@ window.addEventListener('resize', function() {
     camera.aspect = container.offsetWidth / container.offsetHeight;
     camera.updateProjectionMatrix();
 });
+

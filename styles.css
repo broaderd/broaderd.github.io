@@ -1,0 +1,232 @@
+/* General Styles */
+html, body {
+  height: 100%;  /* Ensures both HTML and body take full height */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto;   /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  align-items: center;  /* Vertically aligns title and About link */
+  justify-content: flex-start;  /* Aligns to the left */
+  margin: 2vh 2vw;  /* Responsive spacing around header */
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;  /* Scalable font size */
+  color: white;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3), -3px -3px 2px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+  text-transform: none;
+  padding: 1rem;
+}
+
+a {
+  color: #0e76a8; /* Link color */
+  text-decoration: none;
+}
+
+a.logo-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;  /* Logo size */
+  margin-left: auto;
+}
+a.logo-link:hover {
+  text-decoration: none;
+}
+
+a.about-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-left: 60vw;  /* Adjusts based on screen width */
+  line-height: 1.2;
+}
+a.about-link:hover {
+  text-decoration: underline;  /* Added underline effect on hover */
+}
+
+a.cv-link, a.blog-link, a.notes-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+a.cv-link:hover, a.blog-link:hover, a.notes-link:hover {
+  text-decoration: underline;  /* Added underline effect on hover */
+}
+
+/* Link Hover Effects */
+a:hover {
+  color: #0e76a8;
+}
+
+/* Welcome Container Styles */
+.welcome-container {
+  font-family: Arial, sans-serif;
+  margin-top: 10vh; /* Spacing from top */
+  max-width: 40%;  /* Ensures responsiveness */
+  margin: 0 auto;
+  line-height: 1.6;
+  margin-bottom: 1vh; /* Reduced space between content and simulation */
+}
+
+.welcome-container h2 {
+  font-family: Arial, sans-serif;
+  color: white;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3), -3px -3px 2px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1.2;
+  padding-top: 3vh; /* Spacing from top */
+}
+
+/* Simulation Container - Centering the Three.js Canvas */
+#simulation-container {
+  margin: 0;
+  padding: 0;
+  height: 20vh; /* Full viewport height */
+  width: 100%;   /* Full width of the page */
+  display: block;
+}
+
+/* About Container */
+.about-container {
+  font-family: Arial, sans-serif;
+  max-width: 80%; /* Responsive max width */
+  margin: 0 auto;
+  line-height: 1.6;
+  padding: 2rem;  /* Consistent padding */
+  padding-bottom: 15vh; /* Space for footer */
+  text-align: left; /* Default alignment for larger screens */
+}
+
+.about-container h2 {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-top: 0; /* Space below the heading */
+}
+
+/* Profile Image */
+.profile-image {
+  float: right;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  width: 20vw;  /* Scalable width */
+  height: auto;
+  max-width: 100%;  /* Ensures image never exceeds its container width */
+}
+
+/* Construction Container */
+.construction-container {
+  font-family: Arial, sans-serif;
+  margin-top: 10vh; 
+  max-width: 40%; /* Responsive max width */
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.construction-container h2 {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: white;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3), -3px -3px 2px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1.2;
+  padding-top: 5vh;
+}
+
+/* Footer Styles */
+footer {
+  width: 100%;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  background-color: black;
+  z-index: 1000; /* Ensures footer stays on top */
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-size: 2rem;
+}
+
+footer a:hover i.fas.fa-envelope,
+footer a:hover i.fab.fa-linkedin {
+  color: #0e76a8;
+}
+
+footer a i.fas.fa-envelope,
+footer a i.fab.fa-linkedin {
+  color: #f8f8f8;
+}
+
+/* Footer is at the bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+/* Responsive Design */
+@media (max-width: 750px) {
+  .header {
+    flex-direction: column; /* Stack header links vertically on smaller screens */
+    align-items: center;
+    margin-top: 2rem; /* Space for smaller screens */
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust h1 size for smaller screens */
+  }
+
+  a.about-link,
+  a.notes-link,
+  a.blog-link {
+    font-size: 1.2rem;  /* Adjust font size for smaller screens */
+    margin-left: 0;
+  }
+
+  .profile-image {
+    width: 60vw;  /* Scalable width for profile image */
+    margin-left: 0;
+    margin-bottom: 1rem;
+    /* Ensure it comes below the text */
+    order: 1; /* Make sure the image comes after text */
+  }
+
+  .about-container {
+    text-align: center; /* Center text for smaller screens */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center the content */
+  }
+
+  footer a {
+    font-size: 1.5rem; /* Smaller footer links */
+  }
+}
+
+

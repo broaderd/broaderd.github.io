@@ -18,10 +18,40 @@ body {
 /* Header Styles */
 .header {
   display: flex;
-  align-items: center;  /* Vertically aligns title and About link */
+  align-items: right;  /* Vertically aligns title and About link */
   justify-content: flex-start;  /* Aligns to the left */
   margin: 2vh 2vw;  /* Responsive spacing around header */
 }
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: block;  /* Visible by default on small screens */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+}
+.hamburger:hover {
+  color:#0e76a8; 
+}
+
+/* Hide the hamburger button when the menu is active */
+.header.active .hamburger {
+  display: none;  /* Hide hamburger when the menu is open */
+}
+
 
 h1 {
   font-family: 'Caveat', cursive;
@@ -44,6 +74,7 @@ a.logo-link {
   text-decoration: none;
   font-size: 1.5rem;  /* Logo size */
   margin-left: auto;
+  margin-right: 60vw;
 }
 a.logo-link:hover {
   text-decoration: none;
@@ -53,21 +84,22 @@ a.about-link {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
-  margin-left: 60vw;  /* Adjusts based on screen width */
   line-height: 1.2;
 }
 a.about-link:hover {
-  text-decoration: underline;  /* Added underline effect on hover */
+  text-decoration: none; 
+  color: white;
 }
 
-a.cv-link, a.blog-link, a.notes-link {
+a.cv-link, a.notes-link {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
   margin-left: 1rem;
 }
-a.cv-link:hover, a.blog-link:hover, a.notes-link:hover {
-  text-decoration: underline;  /* Added underline effect on hover */
+a.cv-link:hover, a.about-link:hover, a.notes-link:hover {
+  text-decoration: none;
+  color:#0e76a8;  /* Added underline effect on hover */
 }
 
 /* Link Hover Effects */
@@ -91,7 +123,7 @@ a:hover {
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3), -3px -3px 2px rgba(0, 0, 0, 0.3);
   letter-spacing: 2px;
   margin: 0;
-  line-height: 1.2;
+  font-size: 1.5;
   padding-top: 3vh; /* Spacing from top */
 }
 
@@ -192,14 +224,21 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 750px) {
+  /* Header Layout */
   .header {
-    flex-direction: column; /* Stack header links vertically on smaller screens */
+    flex-direction: row;
     align-items: center;
-    margin-top: 2rem; /* Space for smaller screens */
+    justify-content: space-between;
+    position: relative; /* Ensures proper stacking with the nav */
   }
 
   h1 {
     font-size: 2rem; /* Adjust h1 size for smaller screens */
+  }
+  
+  a.logo-link {
+    /* Adjust font size on smaller screens */
+    margin-right: 1rem; 
   }
 
   a.about-link,
@@ -210,9 +249,9 @@ footer {
   }
 
   .profile-image {
-    width: 60vw;  /* Scalable width for profile image */
+    width: 50vw;  /* Scalable width for profile image */
     margin-left: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     /* Ensure it comes below the text */
     order: 1; /* Make sure the image comes after text */
   }
@@ -224,9 +263,70 @@ footer {
     align-items: center; /* Center the content */
   }
 
+  /* Hamburger Button */
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white; /* Make sure the hamburger is visible */
+    cursor: pointer;
+  }
+
+  /* Navigation Links (Hidden by default) */
+  .nav-links {
+    display: none;  /* Hide by default */
+    flex-direction: column;
+    width: 15%; /* Full width of the screen */
+    text-align: center;
+    position: absolute; /* Position it below the header */
+    top: 3rem; /* Ensure the dropdown is below the header */
+    right: 1rem;
+    background-color: #333; /* Ensure the menu has a background */
+    z-index: 1000; /* Ensure it appears above other content */
+    padding: 0; /* Remove any extra padding */
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #444; /* Optional: Add separator between links */
+  }
+
+  /* Show nav links when the menu is active */
+  .header.active .nav-links {
+    display: flex;
+  }
   footer a {
     font-size: 1.5rem; /* Smaller footer links */
   }
 }
+
+@media (min-width: 751px) {
+  /* Hide Hamburger Button on larger screens */
+  .hamburger {
+    display: none;
+  }
+
+  /* Show nav links as normal on larger screens */
+  .nav-links {
+    display: flex;
+    position: static; /* Remove the absolute position on large screens */
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+  }
+}
+
 
 

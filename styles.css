@@ -223,7 +223,7 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 750px) {
+@media (max-width: 1400px) {
   /* Header Layout */
   .header {
     flex-direction: row;
@@ -304,7 +304,7 @@ footer {
   }
 }
 
-@media (min-width: 751px) {
+@media (min-width: 1401px) {
   /* Hide Hamburger Button on larger screens */
   .hamburger {
     display: none;

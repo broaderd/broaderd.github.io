@@ -13,10 +13,17 @@
   
   <body>
     <div class="header">
-      <h1><a href="index.html" class="logo-link">&#124;Dillon Broaders&#x27E9;</a></h1> 
-      <a href="about.html" class="about-link">About</a>
-      <a href="CV_Dillon_Broaders-3.pdf" download="Dillon_Broaders_CV.pdf" class="cv-link">CV</a>
-      <a href="notes.html" class="notes-link">Notes</a> 
+      <h1><a href="index.html" class="logo-link">&#124;Dillon Broaders&#x27E9;</a></h1>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="about.html" class="about-link">About</a>
+        <a href="CV_Dillon_Broaders-3.pdf" download="Dillon_Broaders_CV.pdf" class="cv-link">CV</a>
+        <a href="notes.html" class="notes-link">Notes</a>
+      </nav>
     </div>
 
     <div class="content-container">
@@ -33,6 +40,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="simulation.js"></script>
+    <script src="hamburger.js"></script> <!-- Your custom JS file for hamburger menu -->
 
     <!-- Footer Section -->
     <footer>
@@ -45,5 +53,4 @@
     </footer>
   </body>
 </html>
-
 

@@ -132,7 +132,7 @@ a:hover {
   margin: 0;
   padding: 0;
   height: 20vh; /* Full viewport height */
-  width: 80%;   /* Full width of the page */
+  width: 100%;   /* Full width of the page */
   display: block;
 }
 

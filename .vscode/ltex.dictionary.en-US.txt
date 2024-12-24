@@ -6,3 +6,15 @@ Spintronics
 Sanvito
 const
 Cockcroft
+href
+Broaders&
+cv-link
+fa-linkedin
+mailto
+fas
+href
+img
+li
+ul
+ie
+ie
